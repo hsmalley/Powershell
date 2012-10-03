@@ -11,17 +11,17 @@
 		* ReturnValue : 2 - Means locked files
 		* HRESULT: 0x800706BA - Means a connection can not be made to the system, e.g. system is shutting down or account doesn't have access to the system.
 #> 
-<# ::: Needed for AD access. You need to have the Quest AD Powershell tools installed. ::: #>
-Add-PSSnapin Quest.ActiveRoles.ADManagement -ErrorAction SilentlyContinue
 <# ::: Updates ::: #>
-$FlashUpdateAX = "\\SERVERNAME\deploy$\Applications\Adobe Flash Active X\install_flash_player_10_active_x.msi"
-$FlashUpdatePL = "\\SERVERNAME\deploy$\Applications\Adobe Flash Plugin\install_flash_player_10_plugin.msi"
-$JavaUpdate = "\\SERVERNAME\deploy$\Applications\Oracle Java x86\jre1.6.0_24.msi"
-$QuickTimeUpdate = "\\SERVERNAME\deploy$\Applications\Apple QuickTime\QuickTime.msi"
+$FlashUpdateAX = "\\DEPLOYMENTSEVER\deploy$\Applications\Adobe Flash Active X\install_flash_player_10_active_x.msi"
+$FlashUpdatePL = "\\DEPLOYMENTSEVER\deploy$\Applications\Adobe Flash Plugin\install_flash_player_10_plugin.msi"
+$JavaUpdate = "\\DEPLOYMENTSEVER\deploy$\Applications\Oracle Java x86\jre1.6.0_24.msi"
+$QuickTimeUpdate = "\\DEPLOYMENTSEVER\deploy$\Applications\Apple QuickTime\QuickTime.msi"
 <# ::: Get Domain Admin Credential ::: #>
 $Cred = Get-Credential
+<# ::: Needed for AD access. You need to have the Quest AD Powershell tools installed. ::: #>
+Add-PSSnapin Quest.ActiveRoles.ADManagement
 <# ::: Pull Computers from AD ::: Change OU if needed. ::: #>
-$Computers = Get-QADComputer -searchroot 'DOMAIN.LOCAL/Workstations/Deployment'
+$Computers = Get-QADComputer -searchroot 'domain.local/Workstations/Deployment'
 $Skipped = @()
 foreach($Computer in $Computers)
 {	
@@ -41,4 +41,4 @@ foreach($Computer in $Computers)
 #	(Get-WMIObject -Class Win32_Process -ComputerName $System -List -Credential $Cred).Create("cmd.exe /c filehere.exe /switches")
 }
 <# ::: Show Systems Skipped ::: #>
-Write-Host $Skipped
+"Computer Name:" + $Skipped | Out-File -Append -FilePath $env:USERPROFILE\Desktop\Report.txt
