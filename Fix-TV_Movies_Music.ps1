@@ -1,4 +1,4 @@
-﻿Clear-Host
+Clear-Host
 Import-Module NTFSSecurity
 $TV = Get-ChildItem -Recurse "C:\Users\Public\Videos\TV"
 $Movies = Get-ChildItem -Recurse "C:\Users\Public\Videos\Movies"

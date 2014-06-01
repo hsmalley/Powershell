@@ -1,4 +1,4 @@
-﻿###################
+###################
 # Locate PST Files
 ###################
 # Created By Hugh Smalley for US Epperson

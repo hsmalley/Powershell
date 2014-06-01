@@ -1,8 +1,8 @@
-﻿Clear-Host
+Clear-Host
 # Add Quest CMDLETS
 Add-PSSnapin Quest.ActiveRoles.ADManagement -WarningAction SilentlyContinue -ErrorAction SilentlyContinue
 # Get Computers
-$Computers = Get-QADComputer -SearchRoot "OU=Workstations,DC=Domain,DC=Local"
+$Computers = Get-QADComputer -SearchRoot "OU=Workstations,DC=ins-lua,DC=com"
 # Create XML Document
 $XMLDocument = New-Object System.XML.xmlDataDocument
 # Make Root Tag
@@ -73,7 +73,7 @@ $Computers | ForEach-Object {
  	[void]$XMLRoot.AppendChild($XMLComputer)
 }
 # And, lastly save the XML document out to disk
-$File = "Path\Here"
+$File = "C:\Users\HS1\Desktop\"
 $Number = $Date.TimeOfDay.Hours + $Date.TimeOfDay.Minutes
 $File = $File + "Computers" + $Number + ".xml"
 $XMLDocument.Save($File)

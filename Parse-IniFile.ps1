@@ -1,4 +1,4 @@
-﻿Function Parse-IniFile ($file) {
+Function Parse-IniFile ($file) {
   $ini = @{}
 
  # Create a default section if none exist in the file. Like a java prop file.

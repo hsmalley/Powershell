@@ -1,4 +1,4 @@
-﻿<# 
+<# 
 	.Synopsis 
    		Update 3rd party software on Network computers
 	.Description 

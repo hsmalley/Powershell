@@ -1,4 +1,4 @@
-﻿# Load the Winforms assembly
+# Load the Winforms assembly
 [reflection.assembly]::LoadWithPartialName( "System.Windows.Forms")
 
 # Create the form

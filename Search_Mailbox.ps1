@@ -1,4 +1,4 @@
-﻿#region Setup
+#region Setup
 #Connect to Exchange with different credentials
 $UserCredential = Get-Credential
 $Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri http://EXCHANGESERVER/PowerShell/ -Authentication Kerberos -Credential $UserCredential

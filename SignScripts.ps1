@@ -1,5 +1,5 @@
-﻿$cert = dir cert:\CurrentUser\my -CodeSigningCert | Select-Object -First 1
-$scripts = "C:\Users\ME\Powershell\Scripts"
+$cert = dir cert:\CurrentUser\my -CodeSigningCert | Select-Object -First 1
+$scripts = "C:\Users\HSmalley\Powershell\Scripts"
 
 Get-ChildItem $scripts -Filter *.ps1 -Recurse -ErrorAction SilentlyContinue |
   ForEach-Object {

@@ -1,4 +1,4 @@
-﻿# Powershell Script to force clients check into WSUS server
+# Powershell Script to force clients check into WSUS server
 
 # Import Active Directory PS Modules CMDLETS
 Import-Module ActiveDirectory
