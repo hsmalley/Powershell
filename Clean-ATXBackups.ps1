@@ -1,4 +1,4 @@
-<# So a stupid program I manage makes copies of it's entire database after everychange. Even though backups are disabled. To keep it from filling the drive this is setup as a scheduled task to run a few times a day.
+<# So a stupid program I manage makes copies of it's entire database after every change. Even though backups are disabled. To keep it from filling the drive this is setup as a scheduled task to run a few times a day.
 #>
 ﻿
 $Date = Get-Date

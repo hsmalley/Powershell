@@ -13,4 +13,4 @@ function Invoke-Admin() {
     }
 }
 
-Invoke-Admin "$Env:LOGONSERVER\NETLOGON\COMMON1.bat"
+Invoke-Admin "$Env:LOGONSERVER\NETLOGON\LOGIN.CMD"
